@@ -18,7 +18,7 @@
 					"method": "GET",
 					"headers": {
 						"Authorization": {
-							"value": "Bearer glpat-rkEmXFyIu9rfgKpUlbA4Sm86MQp1Omw2MGdjCw.01.1210objwj",
+							"value": "Bearer  @{linkedService().",
 							"type": "Expression"
 						}
 					},
