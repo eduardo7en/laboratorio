@@ -18,13 +18,13 @@
 					"method": "GET",
 					"headers": {
 						"Authorization": {
-							"value": "Bearer glpat-MpqSyRlYeWVD262zXh2rdG86MQp1Omw2MGdjCw.01.120st28dg",
+							"value": "Bearer @{activity('Get Token').output.token}",
 							"type": "Expression"
 						},
 						"Accept": "application/vnd.github.v3.raw"
 					},
 					"url": {
-						"value": "https://gitlab.com/api/v4/projects/fractal-group1%2FFRACTAL-project/repository/files/DML%2Finsert.sql/raw?ref=3a7fd447eb46bd170c365d55cdadf9f11ff68394",
+						"value": "@concat('https://api.github.com/repos/', split(pipeline().parameters.permalink,'/')[3], '/', split(pipeline().parameters.permalink,'/')[4], '/contents/', split(pipeline().parameters.permalink,'/')[7], '?ref=', pipeline().parameters.branch)",
 						"type": "Expression"
 					}
 				}
@@ -69,11 +69,11 @@
 		"parameters": {
 			"branch": {
 				"type": "string",
-				"defaultValue": "0.0.0.1"
+				"defaultValue": "teste"
 			},
 			"permalink": {
 				"type": "string",
-				"defaultValue": "https://github.com/eduardo7en/azuretest/blob/0.0.0.1/insert.sql"
+				"defaultValue": "https://github.com/eduardo7en/azuretest/blob/teste/dml.sql"
 			}
 		},
 		"annotations": [],
