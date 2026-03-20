@@ -137,11 +137,11 @@
 				"parameters": {
 					"branch": {
 						"type": "string",
-						"defaultValue": "0.0.0.1"
+						"defaultValue": "teste"
 					},
 					"permalink": {
 						"type": "string",
-						"defaultValue": "https://github.com/eduardo7en/azuretest/blob/0.0.0.1/insert.sql"
+						"defaultValue": "https://github.com/eduardo7en/azuretest/blob/teste/dml.sql"
 					}
 				},
 				"annotations": [],
