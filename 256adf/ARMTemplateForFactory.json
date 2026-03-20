@@ -233,13 +233,12 @@
 							"method": "GET",
 							"headers": {
 								"Authorization": {
-									"value": "Bearer glpat-MpqSyRlYeWVD262zXh2rdG86MQp1Omw2MGdjCw.01.120st28dg",
+									"value": "Bearer glpat-rkEmXFyIu9rfgKpUlbA4Sm86MQp1Omw2MGdjCw.01.1210objwj",
 									"type": "Expression"
-								},
-								"Accept": "application/vnd.github.v3.raw"
+								}
 							},
 							"url": {
-								"value": "https://gitlab.com/fractal-group1/FRACTAL-project/-/blob/3a7fd447eb46bd170c365d55cdadf9f11ff68394/DML/insert.sql",
+								"value": "https://gitlab.com/api/v4/projects/fractal-group1%2FFRACTAL-project/repository/files/DML%2Finsert.sql/raw?ref=main",
 								"type": "Expression"
 							}
 						}
