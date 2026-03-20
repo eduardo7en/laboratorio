@@ -35,10 +35,6 @@
 			"type": "string",
 			"defaultValue": "https://kv-ens.vault.azure.net/"
 		},
-		"AzureKeyVault2_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kv-ens.vault.azure.net/"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -86,9 +82,6 @@
 					},
 					"AzureKeyVault1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
-					},
-					"AzureKeyVault2_properties_typeProperties_baseUrl": {
-						"value": "[parameters('AzureKeyVault2_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},

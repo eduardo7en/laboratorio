@@ -26,9 +26,6 @@
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://kv-ens.vault.azure.net/"
 		},
-		"AzureKeyVault2_properties_typeProperties_baseUrl": {
-			"value": "https://kv-ens.vault.azure.net/"
-		},
 		"containerUri": {
 			"value": ""
 		},
