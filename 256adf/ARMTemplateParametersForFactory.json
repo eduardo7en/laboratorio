@@ -22,9 +22,6 @@
 		},
 		"AzureSqlDatabase2_properties_typeProperties_userName": {
 			"value": "eduardo"
-		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"value": "https://kv-ens.vault.azure.net/"
 		}
 	}
 }
