@@ -210,6 +210,96 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DML_GitLab_Persist')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "GetDMLFile",
+						"type": "WebActivity",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"method": "GET",
+							"headers": {
+								"Authorization": {
+									"value": "Bearer glpat-MpqSyRlYeWVD262zXh2rdG86MQp1Omw2MGdjCw.01.120st28dg",
+									"type": "Expression"
+								},
+								"Accept": "application/vnd.github.v3.raw"
+							},
+							"url": {
+								"value": "https://gitlab.com/fractal-group1/FRACTAL-project/-/blob/3a7fd447eb46bd170c365d55cdadf9f11ff68394/DML/insert.sql",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "ExecutaDML",
+						"type": "Script",
+						"dependsOn": [
+							{
+								"activity": "GetDMLFile",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"linkedServiceName": {
+							"referenceName": "AzureSqlDatabase2",
+							"type": "LinkedServiceReference"
+						},
+						"typeProperties": {
+							"scripts": [
+								{
+									"type": "Query",
+									"text": {
+										"value": "@activity('GetDMLFile').output.Response",
+										"type": "Expression"
+									}
+								}
+							],
+							"scriptBlockExecutionTimeout": "02:00:00"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"branch": {
+						"type": "string",
+						"defaultValue": "teste"
+					},
+					"permalink": {
+						"type": "string",
+						"defaultValue": "https://github.com/eduardo7en/azuretest/blob/teste/dml.sql"
+					}
+				},
+				"annotations": [],
+				"lastPublishTime": "2026-03-19T03:07:53Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
+			]
 		}
 	]
 }
