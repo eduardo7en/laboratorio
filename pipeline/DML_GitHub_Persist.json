@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "Get Token",
+				"description": ",,,",
 				"type": "WebActivity",
 				"dependsOn": [],
 				"policy": {
