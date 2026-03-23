@@ -272,14 +272,15 @@
 								"url": {
 									"value": "@pipeline().parameters.permalink",
 									"type": "Expression"
-								}
+								},
+								"Content-Type": "application/json"
 							},
 							"url": {
 								"value": "https://rawlab.azurewebsites.net/api/getgitlabraw",
 								"type": "Expression"
 							},
 							"body": {
-								"value": "@pipeline().parameters.permalink",
+								"value": "{\n  \"url\":\"@pipeline().parameters.permalink\"\n}",
 								"type": "Expression"
 							}
 						}
