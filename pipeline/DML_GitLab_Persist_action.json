@@ -28,7 +28,7 @@
 						"type": "Expression"
 					},
 					"body": {
-						"value": "{\n  \"url\": \"@pipeline().parameters.permalink\"\n}",
+						"value": "{\n  \"url\":\"@pipeline().parameters.permalink\"\n}",
 						"type": "Expression"
 					}
 				}
