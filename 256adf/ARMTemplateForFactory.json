@@ -178,95 +178,6 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"method": "GET",
-							"headers": {
-								"Authorization": {
-									"value": "Bearer glpat-rkEmXFyIu9rfgKpUlbA4Sm86MQp1Omw2MGdjCw.01.1210objwj",
-									"type": "Expression"
-								}
-							},
-							"url": {
-								"value": "https://gitlab.com/api/v4/projects/fractal-group1%2FFRACTAL-project/repository/files/DML%2Finsert.sql/raw?ref=main",
-								"type": "Expression"
-							}
-						}
-					},
-					{
-						"name": "ExecutaDML",
-						"type": "Script",
-						"dependsOn": [
-							{
-								"activity": "GetDMLFile",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"linkedServiceName": {
-							"referenceName": "AzureSqlDatabase2",
-							"type": "LinkedServiceReference"
-						},
-						"typeProperties": {
-							"scripts": [
-								{
-									"type": "Query",
-									"text": {
-										"value": "@activity('GetDMLFile').output.Response",
-										"type": "Expression"
-									}
-								}
-							],
-							"scriptBlockExecutionTimeout": "02:00:00"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"parameters": {
-					"branch": {
-						"type": "string",
-						"defaultValue": "teste"
-					},
-					"permalink": {
-						"type": "string",
-						"defaultValue": "https://github.com/eduardo7en/azuretest/blob/teste/dml.sql"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2026-03-20T02:37:13Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DML_GitLab_Persist_action')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "GetDMLFile",
-						"type": "WebActivity",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
 							"method": "POST",
 							"headers": {
 								"Content-Type": {
@@ -283,7 +194,7 @@
 								"type": "Expression"
 							},
 							"body": {
-								"value": "@pipeline().parameters.permalink",
+								"value": "'obtendo raw da URL no GitLab'",
 								"type": "Expression"
 							}
 						}
