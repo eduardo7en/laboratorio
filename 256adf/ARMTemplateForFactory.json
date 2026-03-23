@@ -269,7 +269,10 @@
 						"typeProperties": {
 							"method": "POST",
 							"headers": {
-								"Content-Type": "application/json"
+								"Content-Type": {
+									"value": "@pipeline().parameters.permalink",
+									"type": "Expression"
+								}
 							},
 							"url": {
 								"value": "https://rawlab.azurewebsites.net/api/getgitlabraw",
