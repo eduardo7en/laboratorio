@@ -355,10 +355,6 @@
 						"typeProperties": {
 							"method": "POST",
 							"headers": {
-								"url": {
-									"value": "@pipeline().parameters.permalink",
-									"type": "Expression"
-								},
 								"Content-Type": "application/json"
 							},
 							"url": {
@@ -366,7 +362,7 @@
 								"type": "Expression"
 							},
 							"body": {
-								"value": "{\n  \"url\":\"@pipeline().parameters.permalink\"\n}",
+								"value": "{\"url\": \"@pipeline().parameters.permalink\"}",
 								"type": "Expression"
 							}
 						}
