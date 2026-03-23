@@ -20,6 +20,10 @@
 						"Content-Type": {
 							"value": "application/json",
 							"type": "Expression"
+						},
+						"url": {
+							"value": "@pipeline().parameters.permalink",
+							"type": "Expression"
 						}
 					},
 					"url": {
