@@ -1,5 +1,5 @@
 {
-	"name": "DML_GitLab_Persist_action",
+	"name": "DML_GitLab_Persist",
 	"properties": {
 		"activities": [
 			{
