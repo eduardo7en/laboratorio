@@ -1,5 +1,5 @@
 {
-	"name": "DML_GitHub_Persist_action",
+	"name": "DML_GitLab_Persist_action",
 	"properties": {
 		"activities": [
 			{
@@ -17,10 +17,13 @@
 				"typeProperties": {
 					"method": "GET",
 					"headers": {
-						"Accept": "application/vnd.github.v3.raw"
+						"url": {
+							"value": "@pipeline().parameters.permalink",
+							"type": "Expression"
+						}
 					},
 					"url": {
-						"value": "@concat('https://api.github.com/repos/', split(pipeline().parameters.permalink,'/')[3], '/', split(pipeline().parameters.permalink,'/')[4], '/contents/', split(pipeline().parameters.permalink,'/')[7], '?ref=', pipeline().parameters.branch)",
+						"value": "https://rawlab.azurewebsites.net/api/getgitlabraw",
 						"type": "Expression"
 					}
 				}
