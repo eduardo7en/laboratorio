@@ -1,0 +1,78 @@
+{
+	"name": "DML_GitHub_Persist_action",
+	"properties": {
+		"activities": [
+			{
+				"name": "GetDMLFile",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"headers": {
+						"Accept": "application/vnd.github.v3.raw"
+					},
+					"url": {
+						"value": "@concat('https://api.github.com/repos/', split(pipeline().parameters.permalink,'/')[3], '/', split(pipeline().parameters.permalink,'/')[4], '/contents/', split(pipeline().parameters.permalink,'/')[7], '?ref=', pipeline().parameters.branch)",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "ExecutaDML",
+				"type": "Script",
+				"dependsOn": [
+					{
+						"activity": "GetDMLFile",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase2",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": {
+								"value": "@activity('GetDMLFile').output.Response",
+								"type": "Expression"
+							}
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
+				}
+			}
+		],
+		"parameters": {
+			"branch": {
+				"type": "string",
+				"defaultValue": "teste"
+			},
+			"permalink": {
+				"type": "string",
+				"defaultValue": "https://github.com/eduardo7en/azuretest/blob/teste/dml.sql"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-03-19T03:07:53Z"
+	}
+}
