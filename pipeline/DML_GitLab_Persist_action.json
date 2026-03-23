@@ -31,7 +31,7 @@
 						"type": "Expression"
 					},
 					"body": {
-						"value": "@pipeline().parameters.permalink",
+						"value": "'obtendo raw da URL no GitLab'",
 						"type": "Expression"
 					}
 				}
