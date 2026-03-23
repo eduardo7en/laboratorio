@@ -72,7 +72,7 @@
 			},
 			"permalink": {
 				"type": "string",
-				"defaultValue": "https://github.com/eduardo7en/azuretest/blob/teste/dml.sql"
+				"defaultValue": "https://gitlab.com/fractal-group1/FRACTAL-project/-/blob/3a7fd447eb46bd170c365d55cdadf9f11ff68394/insert.sql"
 			}
 		},
 		"annotations": [],
