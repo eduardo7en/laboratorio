@@ -25,6 +25,10 @@
 					"url": {
 						"value": "https://rawlab.azurewebsites.net/api/getgitlabraw",
 						"type": "Expression"
+					},
+					"body": {
+						"value": "@pipeline().parameters.permalink",
+						"type": "Expression"
 					}
 				}
 			},
