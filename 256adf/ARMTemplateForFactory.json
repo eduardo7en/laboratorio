@@ -276,7 +276,7 @@
 								"type": "Expression"
 							},
 							"body": {
-								"value": "{\"url\": \"@pipeline().parameters.permalink\"}",
+								"value": "\"url\": \"@pipeline().parameters.permalink\"",
 								"type": "Expression"
 							}
 						}
