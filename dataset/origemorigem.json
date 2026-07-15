@@ -1,0 +1,17 @@
+{
+	"name": "origemorigem",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "origemstorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureFileStorageLocation",
+				"folderPath": "saida"
+			}
+		}
+	}
+}
