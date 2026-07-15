@@ -15,7 +15,8 @@
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "AzureFileStorageLocation"
+				"type": "AzureFileStorageLocation",
+				"fileName": "dummy"
 			}
 		}
 	}
