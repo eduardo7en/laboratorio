@@ -131,12 +131,6 @@
 				"defaultValue": "software-architecture-patterns.pdf"
 			}
 		},
-		"variables": {
-			"CopyLog": {
-				"type": "String",
-				"defaultValue": "@string(activity('CopyOriginal').output)"
-			}
-		},
 		"annotations": []
 	}
 }
