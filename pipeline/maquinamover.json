@@ -99,7 +99,7 @@
 					"sink": {
 						"type": "BinarySink",
 						"storeSettings": {
-							"type": "AzureFileStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings"
 						}
 					},
 					"enableStaging": false
@@ -118,11 +118,11 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "saidasaida",
+						"referenceName": "logOK",
 						"type": "DatasetReference",
 						"parameters": {
-							"arquivoOrigem": {
-								"value": "@concat(pipeline().parameters.nomedoarquivo, '.OK')",
+							"logContent": {
+								"value": "@string(activity('CopyOriginal').output)",
 								"type": "Expression"
 							}
 						}
