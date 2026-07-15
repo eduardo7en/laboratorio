@@ -18,6 +18,12 @@
 				"type": "AzureFileStorageLocation",
 				"fileName": "ok.txt",
 				"folderPath": "controle"
+			},
+			"compression": {
+				"type": {
+					"value": "@dataset().logContent",
+					"type": "Expression"
+				}
 			}
 		}
 	}
