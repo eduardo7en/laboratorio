@@ -5,6 +5,11 @@
 			"referenceName": "destinodestino",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"arquivoOrigem": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
