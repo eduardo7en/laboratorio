@@ -2,16 +2,16 @@
 	"name": "logOK",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1",
+			"referenceName": "destinodestino",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
+				"type": "AzureFileStorageLocation",
 				"fileName": "ok.txt",
-				"container": "controle"
+				"folderPath": "controle"
 			}
 		}
 	}
