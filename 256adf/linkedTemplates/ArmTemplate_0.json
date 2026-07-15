@@ -380,13 +380,19 @@
 					"referenceName": "origemstorage",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"arquivo": {
+						"type": "string",
+						"defaultValue": "@pipeline().parameters.nomedoarquivo"
+					}
+				},
 				"annotations": [],
 				"type": "Binary",
 				"typeProperties": {
 					"location": {
 						"type": "AzureFileStorageLocation",
 						"fileName": {
-							"value": "@pipeline().parameters.arquivoOrigem",
+							"value": "@dataset().arquivo",
 							"type": "Expression"
 						},
 						"folderPath": "saida"
@@ -471,7 +477,12 @@
 							{
 								"referenceName": "origemorigem",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"arquivo": {
+										"value": "@pipeline().parameters.nomedoarquivo",
+										"type": "Expression"
+									}
+								}
 							}
 						],
 						"outputs": [
@@ -495,11 +506,6 @@
 					"nomedoarquivo": {
 						"type": "string",
 						"defaultValue": "software-architecture-patterns.pdf"
-					}
-				},
-				"variables": {
-					"arquivoOrigem": {
-						"type": "String"
 					}
 				},
 				"annotations": []
