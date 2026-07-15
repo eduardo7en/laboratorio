@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureFileStorageLocation",
 				"fileName": {
-					"value": "@pipeline().parameters.Arquivoorigem",
+					"value": "@pipeline().parameters.arquivoOrigem",
 					"type": "Expression"
 				},
 				"folderPath": "saida"
