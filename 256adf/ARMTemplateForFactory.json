@@ -390,6 +390,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureFileStorageLocation",
+						"fileName": {
+							"value": "@dataset().arquivoOrigem",
+							"type": "Expression"
+						},
 						"folderPath": "saida"
 					}
 				}
