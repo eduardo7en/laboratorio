@@ -1,0 +1,22 @@
+{
+	"name": "logOK_copy1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "origemstorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"logoutput": {
+				"type": "string",
+				"defaultValue": "@string(activity('CopyOriginal').output)"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureFileStorageLocation"
+			}
+		}
+	}
+}
