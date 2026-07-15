@@ -5,13 +5,19 @@
 			"referenceName": "origemstorage",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"arquivo": {
+				"type": "string",
+				"defaultValue": "@pipeline().parameters.nomedoarquivo"
+			}
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureFileStorageLocation",
 				"fileName": {
-					"value": "@pipeline().parameters.nomedoarquivo",
+					"value": "@dataset().arquivo",
 					"type": "Expression"
 				},
 				"folderPath": "saida"
