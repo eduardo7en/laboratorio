@@ -423,7 +423,7 @@
 					"location": {
 						"type": "AzureFileStorageLocation",
 						"fileName": {
-							"value": "'TEMP'.@dataset().arquivoOrigem",
+							"value": "@dataset().arquivoOrigem",
 							"type": "Expression"
 						},
 						"folderPath": "saida"
