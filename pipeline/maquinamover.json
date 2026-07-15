@@ -102,7 +102,13 @@
 				"inputs": [
 					{
 						"referenceName": "logOK",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"logContent": {
+								"value": "@variables('CopyLog')",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
