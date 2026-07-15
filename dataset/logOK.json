@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "ok.txt",
-				"container": "ok"
+				"container": "controle"
 			}
 		}
 	}
