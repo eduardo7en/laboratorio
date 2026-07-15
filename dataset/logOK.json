@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@dataset().logContent",
+					"value": "@concat(pipeline().parameters.nomedoarquivo, '.OK')",
 					"type": "Expression"
 				},
 				"container": "logs"
