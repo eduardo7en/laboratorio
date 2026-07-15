@@ -382,7 +382,8 @@
 				},
 				"parameters": {
 					"logContent": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "@string(activity('CopyOriginal').output)"
 					}
 				},
 				"annotations": [],
