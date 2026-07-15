@@ -19,7 +19,8 @@
 				"fileName": {
 					"value": "@concat(pipeline().parameters.nomedoarquivo, '.OK')",
 					"type": "Expression"
-				}
+				},
+				"container": "logs"
 			}
 		}
 	}
