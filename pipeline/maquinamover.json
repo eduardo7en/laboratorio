@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "CopyOriginal",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -65,7 +65,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Copy data1",
+						"activity": "CopyOriginal",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -94,7 +94,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"arquivoOrigem": {
-								"value": "@activity('Copy data1').output",
+								"value": "@concat(pipeline().parameters.nomedoarquivo, '.OK')",
 								"type": "Expression"
 							}
 						}
