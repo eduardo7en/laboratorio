@@ -574,7 +574,7 @@
 								"type": "DatasetReference",
 								"parameters": {
 									"logContent": {
-										"value": "@variables('CopyLog')",
+										"value": "@activity('CopyOriginal').output",
 										"type": "Expression"
 									}
 								}
