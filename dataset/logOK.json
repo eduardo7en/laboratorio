@@ -8,19 +8,14 @@
 		"parameters": {
 			"logContent": {
 				"type": "string",
-				"defaultValue": "@string(activity('CopyOriginal').output)"
+				"defaultValue": "@concat('{\\\"status\\\":\\\"', activity('CopyOriginal').output.executionDetails[0].status, '\\\",\\\"dataRead\\\":', string(activity('CopyOriginal').output.dataRead), ',\\\"copyDuration\\\":', string(activity('CopyOriginal').output.copyDuration), '}')"
 			}
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@concat(pipeline().parameters.nomedoarquivo, '.OK')",
-					"type": "Expression"
-				},
-				"container": "logs"
+				"type": "AzureBlobStorageLocation"
 			}
 		}
 	}
