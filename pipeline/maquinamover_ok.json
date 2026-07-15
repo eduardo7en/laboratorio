@@ -89,7 +89,8 @@
 						"type": "BinarySource",
 						"storeSettings": {
 							"type": "AzureFileStorageReadSettings",
-							"recursive": true
+							"recursive": true,
+							"deleteFilesAfterCompletion": false
 						},
 						"formatSettings": {
 							"type": "BinaryReadSettings"
@@ -98,7 +99,11 @@
 					"sink": {
 						"type": "BinarySink",
 						"storeSettings": {
-							"type": "AzureFileStorageWriteSettings"
+							"type": "AzureFileStorageWriteSettings",
+							"copyBehavior": {
+								"value": "@activity('CopyOriginal').output",
+								"type": "Expression"
+							}
 						}
 					},
 					"enableStaging": false
