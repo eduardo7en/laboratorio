@@ -88,7 +88,7 @@
 					"source": {
 						"type": "BinarySource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
+							"type": "AzureFileStorageReadSettings",
 							"recursive": true
 						},
 						"formatSettings": {
