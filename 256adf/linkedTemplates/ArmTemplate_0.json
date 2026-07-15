@@ -579,7 +579,7 @@
 								"type": "DatasetReference",
 								"parameters": {
 									"logContent": {
-										"value": "@activity('CopyOriginal').output",
+										"value": "@string(activity('CopyOriginal').output)",
 										"type": "Expression"
 									}
 								}
