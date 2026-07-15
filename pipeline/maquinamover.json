@@ -44,7 +44,13 @@
 				"outputs": [
 					{
 						"referenceName": "saidasaida",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"arquivoOrigem": {
+								"value": "@pipeline().parameters.nomedoarquivo",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
