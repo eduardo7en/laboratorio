@@ -89,8 +89,7 @@
 						"type": "BinarySource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"deleteFilesAfterCompletion": false
+							"recursive": true
 						},
 						"formatSettings": {
 							"type": "BinaryReadSettings"
@@ -107,13 +106,7 @@
 				"inputs": [
 					{
 						"referenceName": "logOK",
-						"type": "DatasetReference",
-						"parameters": {
-							"logContent": {
-								"value": "@string(activity('CopyOriginal').output)",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
