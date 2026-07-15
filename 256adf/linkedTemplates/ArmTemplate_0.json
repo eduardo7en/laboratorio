@@ -491,7 +491,7 @@
 								"type": "DatasetReference",
 								"parameters": {
 									"arquivoOrigem": {
-										"value": "@pipeline().parameters.nomedoarquivo",
+										"value": "@concat('TEMP', pipeline().parameters.nomedoarquivo)",
 										"type": "Expression"
 									}
 								}
