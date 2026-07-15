@@ -547,7 +547,12 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
+						"userProperties": [
+							{
+								"name": "CopyLog",
+								"value": "@string(activity('CopyOriginal').output)"
+							}
+						],
 						"typeProperties": {
 							"source": {
 								"type": "BinarySource",
