@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureFileStorageLocation",
+				"fileName": "@pipeline().parameters.FileName",
 				"folderPath": "saida"
 			}
 		}
