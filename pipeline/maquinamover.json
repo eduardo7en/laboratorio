@@ -48,6 +48,12 @@
 				]
 			}
 		],
+		"parameters": {
+			"nomedoarquivo": {
+				"type": "string",
+				"defaultValue": "software-architecture-patterns.pdf"
+			}
+		},
 		"annotations": []
 	}
 }
