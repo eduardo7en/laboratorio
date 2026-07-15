@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "ok.txt"
+				"fileName": "ok.txt",
+				"container": "ok.ok"
 			}
 		}
 	}
