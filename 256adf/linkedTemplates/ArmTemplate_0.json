@@ -380,22 +380,13 @@
 					"referenceName": "AzureBlobStorage1",
 					"type": "LinkedServiceReference"
 				},
-				"parameters": {
-					"logContent": {
-						"type": "string",
-						"defaultValue": "@string(activity('CopyOriginal').output)"
-					}
-				},
 				"annotations": [],
 				"type": "Binary",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": {
-							"value": "@concat(pipeline().parameters.nomedoarquivo, '.OK')",
-							"type": "Expression"
-						},
-						"container": "logs"
+						"fileName": "ok.txt",
+						"container": "controle"
 					}
 				}
 			},
@@ -559,8 +550,7 @@
 								"type": "BinarySource",
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"deleteFilesAfterCompletion": false
+									"recursive": true
 								},
 								"formatSettings": {
 									"type": "BinaryReadSettings"
@@ -578,12 +568,7 @@
 							{
 								"referenceName": "logOK",
 								"type": "DatasetReference",
-								"parameters": {
-									"logContent": {
-										"value": "@string(activity('CopyOriginal').output)",
-										"type": "Expression"
-									}
-								}
+								"parameters": {}
 							}
 						],
 						"outputs": [
