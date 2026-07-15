@@ -38,7 +38,13 @@
 				"inputs": [
 					{
 						"referenceName": "origemorigem",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"arquivo": {
+								"value": "@pipeline().parameters.nomedoarquivo",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
