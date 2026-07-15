@@ -5,12 +5,6 @@
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"logContent": {
-				"type": "string",
-				"defaultValue": "@concat('{\\\"status\\\":\\\"', activity('CopyOriginal').output.executionDetails[0].status, '\\\",\\\"dataRead\\\":', string(activity('CopyOriginal').output.dataRead), ',\\\"copyDuration\\\":', string(activity('CopyOriginal').output.copyDuration), '}')"
-			}
-		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
