@@ -7,7 +7,8 @@
 		},
 		"parameters": {
 			"logContent": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "@string(activity('CopyOriginal').output)"
 			}
 		},
 		"annotations": [],
@@ -18,8 +19,7 @@
 				"fileName": {
 					"value": "@concat(pipeline().parameters.nomedoarquivo, '.OK')",
 					"type": "Expression"
-				},
-				"container": "logs"
+				}
 			}
 		}
 	}
